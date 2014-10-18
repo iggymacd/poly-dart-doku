@@ -1,23 +1,21 @@
 <!-- import polymer-element's definition -->
 <link rel="import" href="packages/polymer/polymer.html">
-<!-- import the sudoku-clear-cellbt -->
-    <link rel="import" href="sudoku-clear-cell-bt.html">
-    <!-- import the sudoku-clear-cellbt -->
-    <link rel="import" href="sudoku-candidates-table.html">
-<polymer-element name="sudoku-cell" extends="td" attributes="count">
+
+<polymer-element name="sudoku-clear-cell-bt" attributes="count">
 <template>
 <style>
 element.style {
+
 }
-.user > div sudoku-clear-cell-bt:hover {
+button:hover {
 opacity: 1;
 }
-.filled:hover sudoku-clear-cell-bt {
+button {
 display: block;
 }
-.user sudoku-clear-cell-bt {
-display: none;
-opacity: 0.5;
+button {
+/* display: none;
+opacity: 0.5; */
 position: absolute;
 top: 0px;
 right: 0px;
@@ -32,27 +30,27 @@ background-color: rgba(168, 62, 62,0.8);
 color: #EFEFED;
 border: none;
 }
-sudoku-clear-cell-bt {
+button {
 font: 99% sans-serif;
 width: auto;
 overflow: visible;
-cursor: pointer;
+/* cursor: pointer; */
 }
 * {
 margin: 0;
-padding: 0;
+/* padding: 0; */
 }
-* {
+/* * {
 margin: 0;
 padding: 0;
-}
+} */
 input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button {
 padding: 1px 6px;
 }
 input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button {
 align-items: flex-start;
 text-align: center;
-cursor: default;
+/* cursor: default;
 color: buttontext;
 padding: 2px 6px 3px;
 border: 2px outset buttonface;
@@ -61,25 +59,25 @@ border-image-slice: initial;
 border-image-width: initial;
 border-image-outset: initial;
 border-image-repeat: initial;
-background-color: buttonface;
+background-color: buttonface; */
 box-sizing: border-box;
 }
-input, textarea, keygen, select, sudoku-clear-cell-bt {
-margin: 0em;
+input, textarea, keygen, select, button {
+/* margin: 0em;
 font: -webkit-small-control;
-color: initial;
+color: initial; */
 letter-spacing: normal;
 word-spacing: normal;
 text-transform: none;
 text-indent: 0px;
 text-shadow: none;
-display: inline-block;
-text-align: start;
+/* display: inline-block;
+text-align: start; */
 }
-input, textarea, keygen, select, sudoku-clear-cell-bt, meter, progress {
+input, textarea, keygen, select, button, meter, progress {
 -webkit-writing-mode: horizontal-tb;
 }
-sudoku-clear-cell-bt {
+button {
 -webkit-appearance: button;
 }
 Pseudo element
@@ -88,68 +86,69 @@ background: rgba(168, 62, 62,0.8);
 color: #fff;
 text-shadow: none;
 }
+/* Inherited from td.user.filled */
 .box .user {
-color: #A83E3E;
-cursor: pointer;
+/* color: #A83E3E;
+cursor: pointer; */
 }
 .box > * > * > td {
 width: 33%;
 height: 33%;
-font-size: 3em;
+/* font-size: 3em; */
 border-color: #CCC;
 border-style: dashed;
 border-width: 2px 2px 0 0;
-cursor: default;
+/* cursor: default; */
 transition: 0.2s;
 }
-sudoku-candidates-table {
+
+table {
 display: table;
 border-collapse: separate;
 border-spacing: 2px;
 border-color: gray;
 }
-.contwrap > sudoku-candidates-table {
+
+.contwrap > table {
 width: 100%;
 height: 100%;
 border: #AAA solid 2px;
-color: #777;
+/* color: #777; */
 border-radius: 6px;
 }
-sudoku-candidates-table {
+table {
 display: table;
-border-collapse: separate;
+/* border-collapse: separate; */
 border-spacing: 2px;
 border-color: gray;
 }
+
 .outterWrap {
-text-align: center;
+/* text-align: center; */
 padding: 10px 0 15px;
--webkit-touch-callout: none;
+/* -webkit-touch-callout: none;
 -webkit-user-select: none;
 -khtml-user-select: none;
 -moz-user-select: none;
 -ms-user-select: none;
-user-select: none;
+user-select: none; */
 }
 .outterWrap {
-text-align: center;
+/* text-align: center; */
 padding: 10px 0 15px;
--webkit-touch-callout: none;
+/* -webkit-touch-callout: none;
 -webkit-user-select: none;
 -khtml-user-select: none;
 -moz-user-select: none;
 -ms-user-select: none;
-user-select: none;
+user-select: none; */
 }
 </style>
-    <div class="user filled">
-      <div>
-        <span>9</span>
-      </div>
-      <sudoku-clear-cell-bt>x</sudoku-clear-cell-bt>
-      <sudoku-candidates-table class="candidates"></sudoku-candidates-table>
-    </div>
+      <button title="Clear cell">
+      <content>
+      </content>
+      </button>
 
-</template> <script type="application/dart" src="sudoku-cell.dart"></script> 
+</template> <script type="application/dart" src="sudoku-clear-cell-bt.dart"></script> 
 </polymer-element>
 
