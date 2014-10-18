@@ -11,12 +11,11 @@ h1, p {
   color: #333;
 }
 
-#sample_container_id {
+#sudoku_board_id2 {
   width: 100%;
   height: 400px;
   position: relative;
   border: 1px solid #ccc;
   background-color: #fff;
 }
-
 

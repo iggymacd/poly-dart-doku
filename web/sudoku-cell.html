@@ -1,0 +1,67 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="packages/polymer/polymer.html">
+<link rel="stylesheet" href="suduko-cell.css">
+<polymer-element name="sudoku-cell" attributes="count">
+<template>
+<style>
+table {
+  cellpadding: 0;
+  cellspacing: 0;
+  font-size: 12px;
+  font-family: arial;
+  display: table;
+  text-align: center;
+  padding: 10px 0 15px;
+  background: url('canvas-bg.jpg') 0 0;
+  font-size: 12px;
+}
+</style>
+<div>
+  <td class="user filled"><div>
+      <div>
+        <span>5</span>
+      </div>
+      <button title="Clear cell">×</button>
+      <table cellpadding="0" cellspacing="0" class="candidates">
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="num_select show">
+        <tbody>
+          <tr>
+            <td class="disabled">1</td>
+            <td class="">2</td>
+            <td class="">3</td>
+          </tr>
+          <tr>
+            <td class="disabled">4</td>
+            <td class="">5</td>
+            <td class="disabled">6</td>
+          </tr>
+          <tr>
+            <td class="disabled">7</td>
+            <td class="disabled">8</td>
+            <td class="disabled">9</td>
+          </tr>
+        </tbody>
+      </table>
+    </div></td>
+</div>
+
+</template> <script type="application/dart" src="sudoku-cell.dart"></script> </polymer-element>
+

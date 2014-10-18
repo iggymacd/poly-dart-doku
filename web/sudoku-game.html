@@ -1,0 +1,1528 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="packages/polymer/polymer.html">
+    <link rel="stylesheet" href="hackathon_one.css">
+
+<polymer-element name="sudoku-game" attributes="count">
+<template>
+<style>
+div {
+  font-size: 24pt;
+  text-align: center;
+  margin-top: 140px;
+}
+
+button {
+  font-size: 24pt;
+  margin-bottom: 20px;
+}
+</style>
+<div>
+  <table cellpadding="0" cellspacing="0" class="">
+    <tbody>
+      <tr>
+        <td><table cellpadding="0" cellspacing="0" class="box b0">
+            <tbody>
+              <tr>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">y</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+              </tr>
+              <tr>
+                <td><span>1</span></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+              </tr>
+              <tr>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+              </tr>
+            </tbody>
+          </table></td>
+        <td><table cellpadding="0" cellspacing="0" class="box b1">
+            <tbody>
+              <tr>
+                <td><span>7</span></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+              </tr>
+              <tr>
+                <td><span>2</span></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+              </tr>
+              <tr>
+                <td><span>4</span></td>
+                <td><span>8</span></td>
+                <td><span>5</span></td>
+              </tr>
+            </tbody>
+          </table></td>
+        <td><table cellpadding="0" cellspacing="0" class="box b2">
+            <tbody>
+              <tr>
+                <td><span>8</span></td>
+                <td><span>6</span></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+              </tr>
+              <tr>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td><span>4</span></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+              </tr>
+              <tr>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+              </tr>
+            </tbody>
+          </table></td>
+      </tr>
+      <tr>
+        <td><table cellpadding="0" cellspacing="0" class="box b3">
+            <tbody>
+              <tr>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td><span>3</span></td>
+              </tr>
+              <tr>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td><span>9</span></td>
+              </tr>
+              <tr>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td><span>7</span></td>
+                <td><span>5</span></td>
+              </tr>
+            </tbody>
+          </table></td>
+        <td><table cellpadding="0" cellspacing="0" class="box b4">
+            <tbody>
+              <tr>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td><span>9</span></td>
+              </tr>
+              <tr>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+              </tr>
+              <tr>
+                <td><span>3</span></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+              </tr>
+            </tbody>
+          </table></td>
+        <td><table cellpadding="0" cellspacing="0" class="box b5">
+            <tbody>
+              <tr>
+                <td><span>6</span></td>
+                <td><span>7</span></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+              </tr>
+              <tr>
+                <td><span>4</span></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+              </tr>
+              <tr>
+                <td><span>9</span></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+              </tr>
+            </tbody>
+          </table></td>
+      </tr>
+      <tr>
+        <td><table cellpadding="0" cellspacing="0" class="box b6">
+            <tbody>
+              <tr>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+              </tr>
+              <tr>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td><span>9</span></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+              </tr>
+              <tr>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td><span>2</span></td>
+                <td><span>8</span></td>
+              </tr>
+            </tbody>
+          </table></td>
+        <td><table cellpadding="0" cellspacing="0" class="box b7">
+            <tbody>
+              <tr>
+                <td><span>9</span></td>
+                <td><span>7</span></td>
+                <td><span>4</span></td>
+              </tr>
+              <tr>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td><span>2</span></td>
+              </tr>
+              <tr>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td><span>3</span></td>
+              </tr>
+            </tbody>
+          </table></td>
+        <td><table cellpadding="0" cellspacing="0" class="box b8">
+            <tbody>
+              <tr>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+              </tr>
+              <tr>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td><span>1</span></td>
+              </tr>
+              <tr>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+                <td class="user"><div>
+                    <div>
+                      <span></span>
+                    </div>
+                    <button title="Clear cell">×</button>
+                    <table cellpadding="0" cellspacing="0"
+                      class="candidates">
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div></td>
+              </tr>
+            </tbody>
+          </table></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</template> <script type="application/dart" src="sudoku-game.dart"></script> </polymer-element>
+
