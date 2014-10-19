@@ -15,7 +15,7 @@ class SudokuGameList extends PolymerElement {
   factory SudokuGameList() => new Element.tag('sk-games');
   SudokuGameList.created() : super.created();
 
-  SudokuInput get _newSudokuUser => $['new-game'];
+  SudokuInput get _newSudokuUser => $['new-sudoku-game'];
 
   void modelIdChanged() {
     model = document.querySelector('#$modelId');
