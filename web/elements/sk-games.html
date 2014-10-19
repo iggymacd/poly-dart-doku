@@ -2,21 +2,22 @@
 <link rel="import" href="../lib-elements/simple_router.html">
 <link rel="import" href="sk-input.html">
 <link rel="import" href="sk-game-item.html">
+<link rel="import" href="sudoku-game.html">
 
 <polymer-element name="sk-games">
   <template>
     <link rel="stylesheet" href="sk-games.css">
     <simple-router on-route="{{routeAction}}"></simple-router>
     <section id="skgameapp">
-      <header id="header">
-        <input is="sk-input" id="new-sudoku-game" placeholder="Do you want to create a new game?"
+      <header id="header" hidden?="{{model.playingGame}}">
+        <input is="sk-input" id="new-sudoku-game" placeholder="What is your name?"
             autofocus on-sk-input-commit="{{addUserAction}}"
             on-sk-input-cancel="{{cancelAddUserAction}}">
       </header>
-      <section id="main">
-      
+      <section id="game" hidden?="{{!model.playingGame}}">
+      <sudoku-game>Testing</sudoku-game>
       </section>
-      <section id="main" hidden?="{{model.items.length == 0}}">
+      <section id="main" hidden?="{{model.items.length == 0 || model.playingGame}}">
         <input id="toggle-all" type="checkbox"
             on-change="{{toggleAllCompletedAction}}"
             checked="{{model.allCompleted}}">
@@ -45,6 +46,9 @@
         <button hidden?="{{model.completedCount == 0}}" id="clear-completed"
             on-click="{{clearCompletedAction}}">Clear completed
             ({{model.completedCount}})</button>
+        <button id="play-new-game"
+            on-click="{{startNewGameAction}}">Play
+            </button>
       </footer>
     </section>
   </template>

@@ -55,6 +55,10 @@ class SudokuGameList extends PolymerElement {
     model.clearItems();
   }
 
+  void startNewGameAction() {
+    model.startNewGame();
+  }
+
   // TODO(jmesserly): workaround for HTML Imports not setting correct baseURI
   String get baseUri =>
       element.element.ownerDocument == document ? '../' : '';

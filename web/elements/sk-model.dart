@@ -27,6 +27,7 @@ class SudokuModel extends PolymerElement {
   @observable int completedCount = 0;
   @observable int activeCount = 0;
   @observable bool allCompleted = false;
+  @observable bool playingGame = false;
   @observable PolymerLocalStorage storage;
   @observable String filter;
   @observable String activeItemWord;
@@ -92,6 +93,10 @@ class SudokuModel extends PolymerElement {
     items.removeWhere(filters['completed']);
   }
 
+  void startNewGame() {
+    playingGame = true;
+  }
+  
   void setItemsCompleted(bool completed) {
     for (var item in items) {
       item.completed = completed;
