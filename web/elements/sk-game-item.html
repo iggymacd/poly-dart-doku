@@ -1,0 +1,17 @@
+<link rel="import" href="sk-input.html">
+<polymer-element name="sk-game-item" extends="li" on-blur="{{commitAction}}">
+  <template>
+    <link rel="stylesheet" href="sk-game-item.css">
+    <div class="view {{ {'completed': item.completed, 'editing': editing} }}"
+        hidden?="{{editing}}" on-dblclick="{{editAction}}">
+      <input type="checkbox" class="toggle" checked="{{item.completed}}"
+          on-click="{{itemChangeAction}}">
+      <label>{{item.title}}</label>
+      <button class="destroy" on-click="{{destroyAction}}"></button>
+    </div>
+    <input is="sk-input" id="edit" class="edit" value="{{item.title}}"
+        hidden?="{{!editing}}" on-td-input-commit="{{commitAction}}"
+        on-td-input-cancel="{{cancelAction}}">
+  </template>
+  <script type="application/dart" src="sk-game-item.dart"></script>
+</polymer-element>
