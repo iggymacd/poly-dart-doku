@@ -4,17 +4,19 @@
     <link rel="import" href="sudoku-clear-cell-bt.html">
     <!-- import the sudoku-clear-cellbt -->
     <link rel="import" href="sudoku-candidates-table.html">
-<polymer-element name="sudoku-cell" extends="td" attributes="count">
+<polymer-element name="sudoku-cell" extends="td" attributes="count" 
+  on-mouseover="{{showClearCellButtonAction}}" on-mouseleave="{{removeClearCellButtonAction}}"
+  on-click="{{showCandidateSelectionAction}}">
 <template>
     <link rel="stylesheet" href="sudoku-cell.css">
 <style>
 </style>
     <div>
       <div>
-        <span>9</span>
+        <span>{{cellValue}}</span>
       </div>
-      <sudoku-clear-cell-bt>x</sudoku-clear-cell-bt>
-      <sudoku-candidates-table class="candidates"></sudoku-candidates-table>
+      <sudoku-clear-cell-bt hidden?="{{!clearingValue}}">x</sudoku-clear-cell-bt>
+      <sudoku-candidates-table hidden?="{{!selectingCandidates}}"></sudoku-candidates-table>
     </div>
 
 </template> <script type="application/dart" src="sudoku-cell.dart"></script> 

@@ -1,4 +1,4 @@
-element.style {
+/* element.style {
 
 }
 button:hover {
@@ -8,8 +8,8 @@ button {
 display: block;
 }
 button {
-/* display: none;
-opacity: 0.5; */
+display: none;
+opacity: 0.5;
 position: absolute;
 top: 0px;
 right: 0px;
@@ -28,23 +28,23 @@ button {
 font: 99% sans-serif;
 width: auto;
 overflow: visible;
-/* cursor: pointer; */
+cursor: pointer;
 }
 * {
 margin: 0;
-/* padding: 0; */
+padding: 0;
 }
-/* * {
+* {
 margin: 0;
 padding: 0;
-} */
+}
 input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button {
 padding: 1px 6px;
 }
 input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button {
 align-items: flex-start;
 text-align: center;
-/* cursor: default;
+cursor: default;
 color: buttontext;
 padding: 2px 6px 3px;
 border: 2px outset buttonface;
@@ -53,20 +53,20 @@ border-image-slice: initial;
 border-image-width: initial;
 border-image-outset: initial;
 border-image-repeat: initial;
-background-color: buttonface; */
+background-color: buttonface;
 box-sizing: border-box;
 }
 input, textarea, keygen, select, button {
-/* margin: 0em;
+margin: 0em;
 font: -webkit-small-control;
-color: initial; */
+color: initial;
 letter-spacing: normal;
 word-spacing: normal;
 text-transform: none;
 text-indent: 0px;
 text-shadow: none;
-/* display: inline-block;
-text-align: start; */
+display: inline-block;
+text-align: start;
 }
 input, textarea, keygen, select, button, meter, progress {
 -webkit-writing-mode: horizontal-tb;
@@ -80,19 +80,19 @@ background: rgba(168, 62, 62,0.8);
 color: #fff;
 text-shadow: none;
 }
-/* Inherited from td.user.filled */
+Inherited from td.user.filled
 .box .user {
-/* color: #A83E3E;
-cursor: pointer; */
+color: #A83E3E;
+cursor: pointer;
 }
 .box > * > * > td {
 width: 33%;
 height: 33%;
-/* font-size: 3em; */
+font-size: 3em;
 border-color: #CCC;
 border-style: dashed;
 border-width: 2px 2px 0 0;
-/* cursor: default; */
+cursor: default;
 transition: 0.2s;
 }
 
@@ -107,33 +107,102 @@ border-color: gray;
 width: 100%;
 height: 100%;
 border: #AAA solid 2px;
-/* color: #777; */
+color: #777;
 border-radius: 6px;
 }
 table {
 display: table;
-/* border-collapse: separate; */
+border-collapse: separate;
 border-spacing: 2px;
 border-color: gray;
 }
 
 .outterWrap {
-/* text-align: center; */
+text-align: center;
 padding: 10px 0 15px;
-/* -webkit-touch-callout: none;
+-webkit-touch-callout: none;
 -webkit-user-select: none;
 -khtml-user-select: none;
 -moz-user-select: none;
 -ms-user-select: none;
-user-select: none; */
+user-select: none;
 }
 .outterWrap {
-/* text-align: center; */
+text-align: center;
 padding: 10px 0 15px;
-/* -webkit-touch-callout: none;
+-webkit-touch-callout: none;
 -webkit-user-select: none;
 -khtml-user-select: none;
 -moz-user-select: none;
 -ms-user-select: none;
-user-select: none; */
+user-select: none;
 }
+ */
+ 
+ button {
+ -webkit-appearance: none;
+-webkit-writing-mode: horizontal-tb;
+align-items: flex-start;
+background-color: rgba(168, 62, 62, 0.8);
+border-bottom-color: rgb(239, 239, 237);
+border-bottom-left-radius: 25px;
+border-bottom-right-radius: 0px;
+border-bottom-style: none;
+border-bottom-width: 0px;
+border-collapse: separate;
+border-image-outset: 0px;
+border-image-repeat: stretch;
+border-image-slice: 100%;
+border-image-source: none;
+border-image-width: 1;
+border-left-color: rgb(239, 239, 237);
+border-left-style: none;
+border-left-width: 0px;
+border-right-color: rgb(239, 239, 237);
+border-right-style: none;
+border-right-width: 0px;
+border-top-color: rgb(239, 239, 237);
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;
+border-top-style: none;
+border-top-width: 0px;
+box-sizing: border-box;
+color: rgb(239, 239, 237);
+cursor: pointer;
+/* display: none; */
+font-family: sans-serif;
+font-size: 16px;
+font-stretch: normal;
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+height: auto;
+letter-spacing: normal;
+line-height: normal;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+min-width: 16px;
+opacity: 0.5;
+outline-color: rgb(239, 239, 237);
+outline-style: none;
+outline-width: 0px;
+overflow-x: visible;
+overflow-y: visible;
+padding-bottom: 2px;
+padding-left: 4px;
+padding-right: 1px;
+padding-top: 0px;
+/* position: absolute; */
+right: 0px;
+text-align: center;
+text-indent: 0px;
+text-shadow: none;
+text-transform: none;
+top: 0px;
+width: auto;
+word-spacing: 0px;
+writing-mode: lr-tb;
+z-index: 2;
+ }
