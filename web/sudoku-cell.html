@@ -7,142 +7,188 @@
 <polymer-element name="sudoku-cell" extends="td" attributes="count">
 <template>
 <style>
-element.style {
-}
-.user > div sudoku-clear-cell-bt:hover {
-opacity: 1;
-}
-.filled:hover sudoku-clear-cell-bt {
-display: block;
-}
-.user sudoku-clear-cell-bt {
-display: none;
-opacity: 0.5;
-position: absolute;
-top: 0px;
-right: 0px;
-z-index: 2;
-cursor: pointer;
-font-size: 0.5em;
-min-width: 16px;
-border-radius: 0 0 0 25px;
-padding: 0 1px 2px 4px;
-outline: none;
-background-color: rgba(168, 62, 62,0.8);
-color: #EFEFED;
-border: none;
-}
+
 sudoku-clear-cell-bt {
-font: 99% sans-serif;
-width: auto;
-overflow: visible;
-cursor: pointer;
-}
-* {
-margin: 0;
-padding: 0;
-}
-* {
-margin: 0;
-padding: 0;
-}
-input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button {
-padding: 1px 6px;
-}
-input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button {
+-webkit-appearance: none;
+-webkit-writing-mode: horizontal-tb;
 align-items: flex-start;
-text-align: center;
-cursor: default;
-color: buttontext;
-padding: 2px 6px 3px;
-border: 2px outset buttonface;
-border-image-source: initial;
-border-image-slice: initial;
-border-image-width: initial;
-border-image-outset: initial;
-border-image-repeat: initial;
-background-color: buttonface;
+background-color: rgba(168, 62, 62, 0.8);
+border-bottom-color: rgb(239, 239, 237);
+border-bottom-left-radius: 25px;
+border-bottom-right-radius: 0px;
+border-bottom-style: none;
+border-bottom-width: 0px;
+border-collapse: separate;
+border-image-outset: 0px;
+border-image-repeat: stretch;
+border-image-slice: 100%;
+border-image-source: none;
+border-image-width: 1;
+border-left-color: rgb(239, 239, 237);
+border-left-style: none;
+border-left-width: 0px;
+border-right-color: rgb(239, 239, 237);
+border-right-style: none;
+border-right-width: 0px;
+border-top-color: rgb(239, 239, 237);
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;
+border-top-style: none;
+border-top-width: 0px;
 box-sizing: border-box;
-}
-input, textarea, keygen, select, sudoku-clear-cell-bt {
-margin: 0em;
-font: -webkit-small-control;
-color: initial;
+color: rgb(239, 239, 237);
+cursor: pointer;
+display: block;
+font-family: sans-serif;
+font-size: 18px;
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+height: 23px;
 letter-spacing: normal;
-word-spacing: normal;
-text-transform: none;
+line-height: normal;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+min-width: 16px;
+opacity: 0.5;
+outline-color: rgb(239, 239, 237);
+outline-style: none;
+outline-width: 0px;
+overflow-x: visible;
+overflow-y: visible;
+padding-bottom: 2px;
+padding-left: 4px;
+padding-right: 1px;
+padding-top: 0px;
+position: absolute;
+right: 0px;
+text-align: center;
 text-indent: 0px;
 text-shadow: none;
-display: inline-block;
-text-align: start;
+text-transform: none;
+top: 0px;
+width: 16px;
+word-spacing: 0px;
+writing-mode: lr-tb;
+z-index: 2;
 }
-input, textarea, keygen, select, sudoku-clear-cell-bt, meter, progress {
--webkit-writing-mode: horizontal-tb;
-}
-sudoku-clear-cell-bt {
--webkit-appearance: button;
-}
-Pseudo element
-::selection {
-background: rgba(168, 62, 62,0.8);
-color: #fff;
-text-shadow: none;
-}
-.box .user {
-color: #A83E3E;
+
+sudoku-candidates-table {
+-webkit-border-horizontal-spacing: 0px;
+-webkit-border-vertical-spacing: 0px;
+border-bottom-color: rgb(128, 128, 128);
+border-collapse: separate;
+border-left-color: rgb(128, 128, 128);
+border-right-color: rgb(128, 128, 128);
+border-top-color: rgb(128, 128, 128);
+color: rgb(168, 62, 62);
 cursor: pointer;
-}
-.box > * > * > td {
-width: 33%;
-height: 33%;
-font-size: 3em;
-border-color: #CCC;
-border-style: dashed;
-border-width: 2px 2px 0 0;
-cursor: default;
-transition: 0.2s;
-}
-sudoku-candidates-table {
 display: table;
+font-size: 36px;
+height: 60px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+padding-bottom: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+position: absolute;
+text-align: center;
+top: 0px;
+width: 58px;
+}
+
+div > div {
 border-collapse: separate;
-border-spacing: 2px;
-border-color: gray;
-}
-.contwrap > sudoku-candidates-table {
-width: 100%;
-height: 100%;
-border: #AAA solid 2px;
-color: #777;
-border-radius: 6px;
-}
-sudoku-candidates-table {
+color: rgb(168, 62, 62);
+cursor: pointer;
 display: table;
+font-size: 36px;
+height: 60px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+padding-bottom: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+text-align: center;
+width: 58px;
+}
+
+span {
+-webkit-transform: matrix(0, 0, 0, 0, 0, 0);
+-webkit-transition-delay: 0s;
+-webkit-transition-duration: 0.2s;
+-webkit-transition-property: all;
+-webkit-transition-timing-function: ease;
 border-collapse: separate;
-border-spacing: 2px;
-border-color: gray;
-}
-.outterWrap {
+color: rgb(168, 62, 62);
+cursor: pointer;
+display: table-cell;
+font-size: 36px;
+height: 60px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+opacity: 0;
+padding-bottom: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
 text-align: center;
-padding: 10px 0 15px;
--webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
+transform: matrix(0, 0, 0, 0, 0, 0);
+transition-delay: 0s;
+transition-duration: 0.2s;
+transition-property: all;
+transition-timing-function: ease;
+vertical-align: middle;
+width: 58px;
 }
-.outterWrap {
+div {
+-webkit-animation-delay: 0.5s;
+-webkit-animation-direction: normal;
+-webkit-animation-duration: 0.8s;
+-webkit-animation-fill-mode: none;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-name: pulse;
+-webkit-animation-play-state: running;
+-webkit-animation-timing-function: linear;
+animation-delay: 0.5s;
+animation-direction: normal;
+animation-duration: 0.8s;
+animation-fill-mode: none;
+animation-iteration-count: infinite;
+animation-name: pulse;
+animation-play-state: running;
+animation-timing-function: linear;
+background-color: rgba(100, 100, 100, 0.0980392);
+border-collapse: separate;
+color: rgb(168, 62, 62);
+cursor: pointer;
+display: block;
+font-size: 36px;
+height: 60px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+padding-bottom: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+position: relative;
 text-align: center;
-padding: 10px 0 15px;
--webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
+width: 58px;
 }
 </style>
-    <div class="user filled">
+    <div>
       <div>
         <span>9</span>
       </div>
