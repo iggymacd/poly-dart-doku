@@ -1,7 +1,7 @@
 <link rel="import" href="../lib-elements/polymer-selector.html">
 <link rel="import" href="../lib-elements/simple_router.html">
-<!-- <link rel="import" href="td_input.html">
-<link rel="import" href="td_item.html"> -->
+<link rel="import" href="sk-input.html">
+<link rel="import" href="sk-game-item.html">
 
 <polymer-element name="sk-games">
   <template>
@@ -9,29 +9,29 @@
     <simple-router on-route="{{routeAction}}"></simple-router>
     <section id="skgameapp">
       <header id="header">
-        <input is="td-input" id="new-game" placeholder="Do you want to play again?"
+        <input is="sk-input" id="new-game" placeholder="Do you want to play again?"
             autofocus on-sk-input-commit="{{addUserAction}}"
-            on-td-input-cancel="{{cancelAddUserAction}}">
+            on-sk-input-cancel="{{cancelAddUserAction}}">
       </header>
       <section id="main">
       
       </section>
-      <!-- <section id="main" hidden?="{{model.items.length == 0}}">
+      <section id="main" hidden?="{{model.items.length == 0}}">
         <input id="toggle-all" type="checkbox"
             on-change="{{toggleAllCompletedAction}}"
             checked="{{model.allCompleted}}">
         <label for="toggle-all">Mark all as complete</label>
-        <ul id="todo-list" on-td-item-changed="{{itemChangedAction}}"
-            on-td-destroy-item="{{destroyItemAction}}">
+        <ul id="sudoku-game-list" on-sk-item-changed="{{itemChangedAction}}"
+            on-sk-destroy-item="{{destroyItemAction}}">
           <template repeat="{{model.filtered}}">
-            <li is="td-item" item="{{}}"></li>
+            <li is="sk-game-item" item="{{}}"></li>
           </template>
         </ul>
-      </section> -->
+      </section>
       <footer id="footer" hidden?="{{model.items.length == 0}}">
-        <span id="todo-count"><strong>{{model.activeCount}}</strong>
+        <span id="sudoku-game-count"><strong>{{model.activeCount}}</strong>
             {{model.activeItemWord}} left</span>
-<!--         <polymer-selector id="filters" selected="{{activeRoute}}">
+        <polymer-selector id="filters" selected="{{activeRoute}}">
           <li label="all">
             <a _href="{{baseUri}}#/">All</a>
           </li>
@@ -42,7 +42,7 @@
             <a _href="{{baseUri}}#/completed">Completed</a>
           </li>
         </polymer-selector>
- -->        <button hidden?="{{model.completedCount == 0}}" id="clear-completed"
+        <button hidden?="{{model.completedCount == 0}}" id="clear-completed"
             on-click="{{clearCompletedAction}}">Clear completed
             ({{model.completedCount}})</button>
       </footer>

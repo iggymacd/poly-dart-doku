@@ -15,7 +15,7 @@ class SudokuGameList extends PolymerElement {
   factory SudokuGameList() => new Element.tag('sk-games');
   SudokuGameList.created() : super.created();
 
-  SudokuInput get _newTodo => $['new-todo'];
+  SudokuInput get _newSudokuUser => $['new-game'];
 
   void modelIdChanged() {
     model = document.querySelector('#$modelId');
@@ -28,15 +28,15 @@ class SudokuGameList extends PolymerElement {
     activeRoute = (route != null && route != '') ? route : 'all';
   }
 
-  void addTodoAction() {
-    model.newItem(_newTodo.value);
+  void addUserAction() {
+    model.newItem(_newSudokuUser.value);
     // when polyfilling Object.observe, make sure we update immediately
     Observable.dirtyCheck();
-    _newTodo.value = '';
+    _newSudokuUser.value = '';
   }
 
-  void cancelAddTodoAction() {
-    _newTodo.value = '';
+  void cancelAddUserAction() {
+    _newSudokuUser.value = '';
   }
 
   void itemChangedAction() {

@@ -32,7 +32,7 @@ input::-moz-placeholder {
   color: #a9a9a9;
 }
 
-input:-ms-input-placeholder, #new-todo:-ms-input-placeholder {
+input:-ms-input-placeholder, #new-game:-ms-input-placeholder {
   font-style: italic;
   color: #a9a9a9;
 }
